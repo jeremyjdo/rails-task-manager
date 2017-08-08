@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="back">
+        <p>edit a task</p>
+        <%= link_to "back", tasks_path, :class=>"btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <%= render 'form', task: @task %>
+    </div>
+  </div>
+</div>

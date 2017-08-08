@@ -1,0 +1,44 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="menu">
+        <%= link_to "back", tasks_path, :class=>"btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="task">
+        <div class="task-name">
+            <p>
+            <% if @task.done == true %>
+                <i class="fa fa-check-square-o" aria-hidden="true"></i>
+            <% else %>
+              <%=  link_to mark_as_done_path(@task.id), method: :put do %>
+                <i class="fa fa-square-o" aria-hidden="true"></i>
+              <% end %>
+            <% end %>
+            </p>
+          </div>
+        <div class="task-body">
+          <p><strong><%= @task.name %></strong></p>
+          <p>
+            <%= @task.description %>
+          </p>
+        </div>
+        <div class="task-status">
+            <%= link_to task_path(@task), method: :delete do %>
+              <i class="fa fa-trash" aria-hidden="true"></i>
+            <% end %>
+            <%= link_to edit_task_path(@task) do %>
+              <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+            <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
